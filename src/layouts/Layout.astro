@@ -5,10 +5,11 @@ export interface Props {
 }
 
 const { title, description = "Portafolio de Andrés Villanueva Tabares - Desarrollador Full Stack" } = Astro.props;
+const currentLanguage = Astro.currentLocale;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={currentLanguage}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />

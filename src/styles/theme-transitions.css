@@ -3,41 +3,6 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Hover effects for theme-aware elements */
-.hover-accent:hover {
-  color: var(--accent-primary) !important;
-  transform: translateY(-2px);
-}
-
-/* Theme-aware shadows */
-.theme-shadow {
-  box-shadow: 0 4px 6px -1px var(--shadow-primary), 
-              0 2px 4px -1px var(--shadow-secondary);
-}
-
-.theme-shadow-lg {
-  box-shadow: 0 10px 15px -3px var(--shadow-primary), 
-              0 4px 6px -2px var(--shadow-secondary);
-}
-
-.theme-shadow-xl {
-  box-shadow: 0 20px 25px -5px var(--shadow-primary), 
-              0 10px 10px -5px var(--shadow-secondary);
-}
-
-/* Glassmorphism effects */
-.glass-light {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.glass-dark {
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
 /* Theme toggle button animations */
 #theme-toggle {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -51,53 +16,9 @@
   transform: scale(0.95);
 }
 
-/* Smooth color transitions for all elements */
-* {
-  transition: background-color 0.3s ease, 
-              color 0.3s ease, 
-              border-color 0.3s ease, 
-              box-shadow 0.3s ease,
-              transform 0.2s ease;
-}
-
 /* Disable transitions during theme switch to prevent flickering */
 .theme-switching * {
   transition: none !important;
 }
 
-/* Force theme variables application */
-[data-theme="light"] {
-  --bg-primary: #ffffff !important;
-  --bg-secondary: #f8fafc !important;
-  --bg-tertiary: #f1f5f9 !important;
-  --text-primary: #0f172a !important;
-  --text-secondary: #1e293b !important;
-  --text-muted: #475569 !important;
-  --accent-primary: #2563eb !important;
-  --accent-secondary: #7c3aed !important;
-  --accent-tertiary: #dc2626 !important;
-  --border-primary: #e2e8f0 !important;
-  --border-secondary: #cbd5e1 !important;
-  --glass-bg: rgba(255, 255, 255, 0.9) !important;
-  --glass-border: rgba(0, 0, 0, 0.15) !important;
-  --shadow-primary: rgba(0, 0, 0, 0.1) !important;
-  --shadow-secondary: rgba(0, 0, 0, 0.05) !important;
-}
 
-[data-theme="dark"] {
-  --bg-primary: #0f172a !important;
-  --bg-secondary: #1e293b !important;
-  --bg-tertiary: #334155 !important;
-  --text-primary: #f8fafc !important;
-  --text-secondary: #cbd5e1 !important;
-  --text-muted: #94a3b8 !important;
-  --accent-primary: #60a5fa !important;
-  --accent-secondary: #a78bfa !important;
-  --accent-tertiary: #f472b6 !important;
-  --border-primary: #334155 !important;
-  --border-secondary: #475569 !important;
-  --glass-bg: rgba(255, 255, 255, 0.1) !important;
-  --glass-border: rgba(255, 255, 255, 0.2) !important;
-  --shadow-primary: rgba(0, 0, 0, 0.3) !important;
-  --shadow-secondary: rgba(0, 0, 0, 0.2) !important;
-}

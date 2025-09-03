@@ -1,0 +1,104 @@
+---
+// Toggle de idioma en Astro puro con banderas reales
+---
+
+<button 
+  id="languageToggle" 
+  class="fixed top-20 right-20 z-50 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 overflow-hidden cursor-pointer"
+  aria-label="Cambiar idioma"
+>
+  <!-- Bandera de Colombia como fondo -->
+  <svg id="colombiaFlag" class="absolute inset-0 w-full h-full" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <rect width="3" height="1" fill="#FDE047"/>
+    <rect width="3" height="0.5" y="1" fill="#3B82F6"/>
+    <rect width="3" height="0.5" y="1.5" fill="#EF4444"/>
+  </svg>
+  
+  <!-- Bandera de Estados Unidos como fondo -->
+  <svg id="usaFlag" class="absolute inset-0 w-full h-full hidden" viewBox="0 0 190 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <rect width="190" height="100" fill="#B22234"/>
+    <rect width="190" height="7.69" y="7.69" fill="white"/>
+    <rect width="190" height="7.69" y="23.08" fill="white"/>
+    <rect width="190" height="7.69" y="38.46" fill="white"/>
+    <rect width="190" height="7.69" y="53.85" fill="white"/>
+    <rect width="190" height="7.69" y="69.23" fill="white"/>
+    <rect width="190" height="7.69" y="84.62" fill="white"/>
+    <rect width="76" height="53.85" fill="#3C3B6E"/>
+  </svg>
+  
+  <!-- Texto ES/EN en el centro -->
+  <span id="currentText" class="relative z-10 text-white font-bold text-sm drop-shadow-lg shadow-xl letter-border">ES</span>
+</button>
+
+<style>
+  .letter-border {
+    -webkit-text-stroke: 1px black;
+    text-stroke: 1px black;
+    color: white;
+    font-size: 1.4rem;
+  }
+</style>
+
+<script>
+  // Función para obtener el idioma actual basado en la URL
+  function getCurrentLanguage() {
+    const path = window.location.pathname;
+    if (path.startsWith('/en')) return 'en';
+    if (path.startsWith('/es')) return 'es';
+    return 'es'; // default
+  }
+
+  // Función para actualizar la visualización
+  function updateDisplay() {
+    const colombiaFlag = document.getElementById('colombiaFlag');
+    const usaFlag = document.getElementById('usaFlag');
+    const currentText = document.getElementById('currentText');
+    const button = document.getElementById('languageToggle');
+    
+    if (!colombiaFlag || !usaFlag || !currentText || !button) return;
+    
+    const currentLang = getCurrentLanguage();
+    
+    if (currentLang === 'es') {
+      colombiaFlag.classList.remove('hidden');
+      usaFlag.classList.add('hidden');
+      currentText.textContent = 'ES';
+      button.setAttribute('aria-label', 'Cambiar a inglés');
+    } else {
+      colombiaFlag.classList.add('hidden');
+      usaFlag.classList.remove('hidden');
+             currentText.textContent = 'US';
+      button.setAttribute('aria-label', 'Change to Spanish');
+    }
+  }
+
+  // Función para cambiar idioma
+  function toggleLanguage() {
+    const currentLang = getCurrentLanguage();
+    const newLang = currentLang === 'es' ? 'en' : 'es';
+    const currentPath = window.location.pathname;
+    
+    // Construir nueva URL
+    let newPath;
+    if (currentPath.startsWith('/es')) {
+      newPath = currentPath.replace('/es', '/en');
+    } else if (currentPath.startsWith('/en')) {
+      newPath = currentPath.replace('/en', '/es');
+    } else {
+      // Si estamos en la raíz, ir al idioma opuesto
+      newPath = `/${newLang}`;
+    }
+    
+    // Navegar a la nueva URL
+    window.location.href = newPath;
+  }
+
+  // Inicializar cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('languageToggle');
+    if (button) {
+      button.addEventListener('click', toggleLanguage);
+      updateDisplay();
+    }
+  });
+</script>
