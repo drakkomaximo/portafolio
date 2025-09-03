@@ -45,16 +45,16 @@ const title = t.hero.title;
             {lang === 'es' ? 'Inicio' : 'Home'}
           </a>
           <a href={`/${lang}#sobre-mi`} class="text-white/80 hover:text-white transition-colors">
-            {t.sobreMi.title}
+            {t.aboutMe.title}
           </a>
           <a href={`/${lang}#proyectos`} class="text-white/80 hover:text-white transition-colors">
-            {t.proyectos.title}
+            {t.projects.title}
           </a>
           <a href={`/${lang}#habilidades`} class="text-white/80 hover:text-white transition-colors">
-            {t.habilidades.title}
+            {t.skills.title}
           </a>
           <a href={`/${lang}#contacto`} class="text-white/80 hover:text-white transition-colors">
-            {t.contacto.title}
+            {t.contact.title}
           </a>
         </nav>
 
@@ -68,97 +68,166 @@ const title = t.hero.title;
   </header>
 
   <!-- Hero Section -->
-  <section id="inicio" class="hero-section relative text-center py-24 md:py-36 lg:py-52">
+  <section id="inicio" class="hero-section relative text-center py-16 md:py-20 lg:py-24">
+    <!-- Background Elements -->
     <div class="absolute inset-0 z-0">
-      <div class="absolute top-0 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-blob"></div>
-      <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+      <div class="absolute top-10 left-1/4 w-48 h-48 bg-purple-500/20 rounded-full blur-2xl animate-blob"></div>
+      <div class="absolute bottom-10 right-1/4 w-48 h-48 bg-blue-500/20 rounded-full blur-2xl animate-blob animation-delay-2000"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-pink-500/15 rounded-full blur-xl animate-pulse"></div>
     </div>
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <h1 class="text-6xl md:text-7xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 leading-tight mb-6 text-glow">
-        {t.hero.title}
-      </h1>
-      <p class="text-3xl md:text-4xl text-white/90 font-light mb-10 text-glow">
-        {t.hero.subtitle}
-      </p>
-      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed text-glow">
-        {t.hero.description}
-      </p>
-      <div class="flex justify-center space-x-6">
-        <a href={`/${lang}#proyectos`} class="btn-primary">
-          {t.hero.verProyectos}
-        </a>
-        <a href={`/${lang}#contacto`} class="btn-secondary">
-          {t.hero.contactar}
-        </a>
-      </div>
+    
+    <!-- Main Content -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      
+             <!-- Title and Subtitle -->
+       <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 leading-tight mb-4 text-glow animate-fade-in-up animate-delay-200">
+         {t.hero.title}
+       </h1>
+       <p class="text-2xl md:text-3xl text-white/90 font-semibold mb-6 text-glow animate-fade-in-up animate-delay-400">
+         {t.hero.subtitle}
+       </p>
+       
+       <!-- Description -->
+       <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed text-glow animate-fade-in-up animate-delay-600">
+         {t.hero.description}
+       </p>
+      
+      
+      
+             <!-- Quick Stats -->
+       <div class="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+         <div class="text-center animate-fade-in-up animate-delay-800">
+           <div class="text-3xl font-bold text-blue-400 mb-2 animate-count-up">5+</div>
+           <div class="text-white/70 text-sm">{t.quickStats.yearsExp}</div>
+         </div>
+         <div class="text-center animate-fade-in-up animate-delay-1000">
+           <div class="text-3xl font-bold text-purple-400 mb-2 animate-count-up">50+</div>
+           <div class="text-white/70 text-sm">{t.quickStats.projects}</div>
+         </div>
+         <div class="text-center animate-fade-in-up animate-delay-1200">
+           <div class="text-3xl font-bold text-pink-400 mb-2 animate-count-up">100%</div>
+           <div class="text-white/70 text-sm">{t.quickStats.satisfaction}</div>
+         </div>
+       </div>
     </div>
   </section>
 
   <!-- About Me Section -->
   <section id="sobre-mi" class="py-20 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-20">
-        <h2 class="section-title">
-          {t.sobreMi.title}
-        </h2>
-        <div class="section-divider"></div>
-        <p class="text-xl text-white/80 mt-6 text-glow">
-          {t.sobreMi.quienSoy}
-        </p>
-      </div>
+             <div class="text-center mb-20">
+         <h2 class="section-title animate-fade-in-up animate-delay-200">
+           {t.aboutMe.title}
+         </h2>
+         <div class="section-divider animate-fade-in-up animate-delay-400"></div>
+         <p class="text-xl text-white/80 mt-6 text-glow animate-fade-in-up animate-delay-600">
+           {t.aboutMe.whoAmI}
+         </p>
+       </div>
       
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div class="glass-card p-10">
-          <p class="text-white/80 mb-6 leading-relaxed">
-            {t.sobreMi.description1}
-          </p>
-          <p class="text-white/80 leading-relaxed">
-            {t.sobreMi.description2}
-          </p>
-          <div class="mt-8 grid grid-cols-2 gap-4">
-            <span class="badge">{t.sobreMi.fullStack}</span>
-            <span class="badge">{t.sobreMi.problemSolving}</span>
-            <span class="badge">{t.sobreMi.cleanCode}</span>
+      <div class="grid lg:grid-cols-3 gap-12 items-start">
+                 <!-- Columna izquierda: Foto moderna -->
+         <div class="lg:col-span-1 animate-fade-in-left animate-delay-800">
+           <div class="relative group">
+            <!-- Foto principal con efectos modernos -->
+            <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+              <div class="aspect-square w-full overflow-hidden">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Andrés Villanueva Tabares" 
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  onerror="this.src='https://via.placeholder.com/400x400/1e293b/ffffff?text=AVT'"
+                />
+              </div>
+              <!-- Overlay gradiente sutil -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+            
+            <!-- Indicador de estado online -->
+            <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+              <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+            </div>
+            
+            <!-- Botón de descarga del CV moderno -->
+            <div class="mt-8">
+              <a 
+                href={lang === 'es' ? '/es_cv_andres_villanueva_tabares_2025.pdf' : '/en_cv_andres_villanueva_tabares_2025.pdf'} 
+                download
+                class="group/btn relative w-full inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white font-semibold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
+              >
+                <!-- Efecto de brillo -->
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+                
+                <svg class="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                <span class="relative z-10">{t.aboutMe.downloadCV}</span>
+              </a>
+              <p class="text-white/60 text-sm mt-3 text-center">{t.aboutMe.downloadCVDesc}</p>
+            </div>
           </div>
         </div>
         
-        <div class="space-y-8">
-          <div class="flex items-start space-x-6 glass-card p-6 hover:scale-105 transition-transform duration-300">
-            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0 glow">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-white mb-2 text-glow">{t.sobreMi.desarrolloWeb}</h3>
-              <p class="text-white/80">{t.sobreMi.desarrolloWebDesc}</p>
-            </div>
-          </div>
-          
-          <div class="flex items-start space-x-6 glass-card p-6 hover:scale-105 transition-transform duration-300">
-            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center flex-shrink-0 glow">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-white mb-2 text-glow">{t.sobreMi.performance}</h3>
-              <p class="text-white/80">{t.sobreMi.performanceDesc}</p>
+                 <!-- Columna central: Descripción -->
+         <div class="lg:col-span-2 space-y-8 animate-fade-in-right animate-delay-1000">
+          <!-- Descripción principal -->
+          <div class="glass-card p-8">
+            <p class="text-white/80 mb-6 leading-relaxed text-lg">
+              {t.aboutMe.description1}
+            </p>
+            <p class="text-white/80 leading-relaxed text-lg">
+              {t.aboutMe.description2}
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <span class="badge">{t.aboutMe.fullStack}</span>
+              <span class="badge">{t.aboutMe.problemSolving}</span>
+              <span class="badge">{t.aboutMe.cleanCode}</span>
             </div>
           </div>
           
-          <div class="flex items-start space-x-6 glass-card p-6 hover:scale-105 transition-transform duration-300">
-            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0 glow">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-white mb-2 text-glow">{t.sobreMi.mobileFirst}</h3>
-              <p class="text-white/80">{t.sobreMi.mobileFirstDesc}</p>
-            </div>
-          </div>
-        </div>
+                     <!-- Características destacadas -->
+           <div class="grid md:grid-cols-3 gap-6">
+             <!-- Desarrollo Web -->
+             <div class="glass-card p-6 hover:scale-105 transition-transform duration-300 group animate-fade-in-up animate-delay-1200">
+             <div class="flex items-center space-x-4 mb-4">
+               <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0 glow group-hover:scale-110 transition-transform duration-300">
+                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                 </svg>
+               </div>
+               <h3 class="text-lg font-bold text-white text-glow">{t.aboutMe.webDevelopment}</h3>
+             </div>
+             <p class="text-white/70 text-sm leading-relaxed">{t.aboutMe.webDevelopmentDesc}</p>
+           </div>
+           
+                        <!-- Performance -->
+             <div class="glass-card p-6 hover:scale-105 transition-transform duration-300 group animate-fade-in-up animate-delay-1400">
+             <div class="flex items-center space-x-4 mb-4">
+               <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center flex-shrink-0 glow group-hover:scale-110 transition-transform duration-300">
+                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                 </svg>
+               </div>
+               <h3 class="text-lg font-bold text-white text-glow">{t.aboutMe.performance}</h3>
+             </div>
+             <p class="text-white/70 text-sm leading-relaxed">{t.aboutMe.performanceDesc}</p>
+           </div>
+           
+                        <!-- Mobile First -->
+             <div class="glass-card p-6 hover:scale-105 transition-transform duration-300 group animate-fade-in-up animate-delay-1600">
+             <div class="flex items-center space-x-4 mb-4">
+               <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0 glow group-hover:scale-110 transition-transform duration-300">
+                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                 </svg>
+               </div>
+               <h3 class="text-lg font-bold text-white text-glow">{t.aboutMe.mobileFirst}</h3>
+             </div>
+             <p class="text-white/70 text-sm leading-relaxed">{t.aboutMe.mobileFirstDesc}</p>
+           </div>
+         </div>
+       </div>
       </div>
     </div>
   </section>
@@ -166,24 +235,24 @@ const title = t.hero.title;
   <!-- Projects Section -->
   <section id="proyectos" class="py-20 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-20">
-        <h2 class="section-title">{t.proyectos.title}</h2>
-        <div class="section-divider"></div>
-        <p class="text-xl text-white/80 mt-6 text-glow">{t.proyectos.subtitle}</p>
-      </div>
+             <div class="text-center mb-20">
+         <h2 class="section-title animate-fade-in-up animate-delay-200">{t.projects.title}</h2>
+         <div class="section-divider animate-fade-in-up animate-delay-400"></div>
+         <p class="text-xl text-white/80 mt-6 text-glow animate-fade-in-up animate-delay-600">{t.projects.subtitle}</p>
+       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Project 1 -->
-        <div class="card group">
+                 <!-- Project 1 -->
+         <div class="card group animate-fade-in-up animate-delay-800">
           <div class="h-48 bg-gradient-to-br from-blue-400 via-purple-500 to-indigo-600 relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             <div class="absolute bottom-4 left-4 text-white">
-              <h3 class="text-2xl font-bold mb-2">{t.proyectos.proyecto1.titulo}</h3>
-              <p class="text-white/90">{t.proyectos.proyecto1.subtitulo}</p>
+              <h3 class="text-2xl font-bold mb-2">{t.projects.project1.title}</h3>
+              <p class="text-white/90">{t.projects.project1.subtitle}</p>
             </div>
           </div>
           <div class="p-8">
-            <p class="text-white/80 mb-6 leading-relaxed">{t.proyectos.proyecto1.descripcion}</p>
+            <p class="text-white/80 mb-6 leading-relaxed">{t.projects.project1.description}</p>
             <div class="flex flex-wrap gap-3 mb-6">
               <span class="bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/20">React</span>
               <span class="bg-gradient-to-r from-green-500/20 to-teal-500/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/20">Node.js</span>
@@ -191,26 +260,26 @@ const title = t.hero.title;
             </div>
             <div class="flex space-x-4">
               <a href="#" class="text-blue-400 hover:text-blue-300 font-semibold text-sm transition-colors">
-                {t.proyectos.verDemo}
+                {t.projects.viewDemo}
               </a>
               <a href="#" class="text-white/70 hover:text-white font-semibold text-sm transition-colors">
-                {t.proyectos.codigo}
+                {t.projects.code}
               </a>
             </div>
           </div>
         </div>
         
-        <!-- Project 2 -->
-        <div class="card group">
+                 <!-- Project 2 -->
+         <div class="card group animate-fade-in-up animate-delay-1000">
           <div class="h-48 bg-gradient-to-br from-green-400 via-teal-500 to-emerald-600 relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             <div class="absolute bottom-4 left-4 text-white">
-              <h3 class="text-2xl font-bold mb-2">{t.proyectos.proyecto2.titulo}</h3>
-              <p class="text-white/90">{t.proyectos.proyecto2.subtitulo}</p>
+              <h3 class="text-2xl font-bold mb-2">{t.projects.project2.title}</h3>
+              <p class="text-white/90">{t.projects.project2.subtitle}</p>
             </div>
           </div>
           <div class="p-8">
-            <p class="text-white/80 mb-6 leading-relaxed">{t.proyectos.proyecto2.descripcion}</p>
+            <p class="text-white/80 mb-6 leading-relaxed">{t.projects.project2.description}</p>
             <div class="flex flex-wrap gap-3 mb-6">
               <span class="bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/20">Vue.js</span>
               <span class="bg-gradient-to-br from-green-500/20 to-teal-500/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/20">Firebase</span>
@@ -218,26 +287,26 @@ const title = t.hero.title;
             </div>
             <div class="flex space-x-4">
               <a href="#" class="text-green-400 hover:text-green-300 font-semibold text-sm transition-colors">
-                {t.proyectos.verDemo}
+                {t.projects.viewDemo}
               </a>
               <a href="#" class="text-white/70 hover:text-white font-semibold text-sm transition-colors">
-                {t.proyectos.codigo}
+                {t.projects.code}
               </a>
             </div>
           </div>
         </div>
         
-        <!-- Project 3 -->
-        <div class="card group">
+                 <!-- Project 3 -->
+         <div class="card group animate-fade-in-up animate-delay-1200">
           <div class="h-48 bg-gradient-to-br from-purple-400 via-pink-500 to-rose-600 relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             <div class="absolute bottom-4 left-4 text-white">
-              <h3 class="text-2xl font-bold mb-2">{t.proyectos.proyecto3.titulo}</h3>
-              <p class="text-white/90">{t.proyectos.proyecto3.subtitulo}</p>
+              <h3 class="text-2xl font-bold mb-2">{t.projects.project3.title}</h3>
+              <p class="text-white/90">{t.projects.project3.subtitle}</p>
             </div>
           </div>
           <div class="p-8">
-            <p class="text-white/80 mb-6 leading-relaxed">{t.proyectos.proyecto3.descripcion}</p>
+            <p class="text-white/80 mb-6 leading-relaxed">{t.projects.project3.description}</p>
             <div class="flex flex-wrap gap-3 mb-6">
               <span class="bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/20">Astro</span>
               <span class="bg-gradient-to-br from-green-500/20 to-teal-500/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/20">Tailwind</span>
@@ -245,10 +314,10 @@ const title = t.hero.title;
             </div>
             <div class="flex space-x-4">
               <a href="#" class="text-pink-400 hover:text-pink-300 font-semibold text-sm transition-colors">
-                {t.proyectos.verDemo}
+                {t.projects.viewDemo}
               </a>
               <a href="#" class="text-white/70 hover:text-white font-semibold text-sm transition-colors">
-                {t.proyectos.codigo}
+                {t.projects.code}
               </a>
             </div>
           </div>
@@ -260,21 +329,21 @@ const title = t.hero.title;
   <!-- Skills Section -->
   <section id="habilidades" class="py-20 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-20">
-        <h2 class="section-title">{t.habilidades.title}</h2>
-        <div class="section-divider"></div>
-        <p class="text-xl text-white/80 mt-6 text-glow">{t.habilidades.subtitle}</p>
-      </div>
+             <div class="text-center mb-20">
+         <h2 class="section-title animate-fade-in-up animate-delay-200">{t.skills.title}</h2>
+         <div class="section-divider animate-fade-in-up animate-delay-400"></div>
+         <p class="text-xl text-white/80 mt-6 text-glow animate-fade-in-up animate-delay-600">{t.skills.subtitle}</p>
+       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Frontend -->
-        <div class="text-center glass-card p-8 hover:scale-105 transition-transform duration-300">
+                 <!-- Frontend -->
+         <div class="text-center glass-card p-8 hover:scale-105 transition-transform duration-300 animate-fade-in-up animate-delay-800">
           <div class="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6 glow">
             <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-4 text-glow">{t.habilidades.frontend.title}</h3>
+          <h3 class="text-2xl font-bold text-white mb-4 text-glow">{t.skills.frontend.title}</h3>
           <div class="space-y-3">
             <div class="text-white/80 font-medium">React / Vue.js</div>
             <div class="text-white/80 font-medium">TypeScript</div>
@@ -283,30 +352,30 @@ const title = t.hero.title;
           </div>
         </div>
         
-        <!-- Backend -->
-        <div class="text-center glass-card p-8 hover:scale-105 transition-transform duration-300">
+                 <!-- Backend -->
+         <div class="text-center glass-card p-8 hover:scale-105 transition-transform duration-300 animate-fade-in-up animate-delay-1000">
           <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-teal-600 rounded-3xl flex items-center justify-center mx-auto mb-6 glow">
             <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-4 text-glow">{t.habilidades.backend.title}</h3>
+          <h3 class="text-2xl font-bold text-white mb-4 text-glow">{t.skills.backend.title}</h3>
           <div class="space-y-3">
             <div class="text-white/80 font-medium">Node.js</div>
             <div class="text-white/80 font-medium">Express.js</div>
             <div class="text-white/80 font-medium">Python</div>
-            <div class="text-white/80 font-medium">{t.habilidades.backend.apis}</div>
+            <div class="text-white/80 font-medium">{t.skills.backend.apis}</div>
           </div>
         </div>
         
-        <!-- Database -->
-        <div class="text-center glass-card p-8 hover:scale-105 transition-transform duration-300">
+                 <!-- Database -->
+         <div class="text-center glass-card p-8 hover:scale-105 transition-transform duration-300 animate-fade-in-up animate-delay-1200">
           <div class="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-600 rounded-3xl flex items-center justify-center mx-auto mb-6 glow">
             <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-4 text-glow">{t.habilidades.database.title}</h3>
+          <h3 class="text-2xl font-bold text-white mb-4 text-glow">{t.skills.database.title}</h3>
           <div class="space-y-3">
             <div class="text-white/80 font-medium">MongoDB</div>
             <div class="text-white/80 font-medium">PostgreSQL</div>
@@ -315,15 +384,15 @@ const title = t.hero.title;
           </div>
         </div>
         
-        <!-- DevOps -->
-        <div class="text-center glass-card p-8 hover:scale-105 transition-transform duration-300">
+                 <!-- DevOps -->
+         <div class="text-center glass-card p-8 hover:scale-105 transition-transform duration-300 animate-fade-in-up animate-delay-1400">
           <div class="w-24 h-24 bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mx-auto mb-6 glow">
             <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-4 text-glow">{t.habilidades.devops.title}</h3>
+          <h3 class="text-2xl font-bold text-white mb-4 text-glow">{t.skills.devops.title}</h3>
           <div class="space-y-3">
             <div class="text-white/80 font-medium">Docker</div>
             <div class="text-white/80 font-medium">Git</div>
@@ -338,15 +407,15 @@ const title = t.hero.title;
   <!-- Contact Section -->
   <section id="contacto" class="py-20 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-20">
-        <h2 class="section-title">{t.contacto.title}</h2>
-        <div class="section-divider"></div>
-        <p class="text-xl text-white/80 mt-6 text-glow">{t.contacto.subtitle}</p>
-      </div>
+             <div class="text-center mb-20">
+         <h2 class="section-title animate-fade-in-up animate-delay-200">{t.contact.title}</h2>
+         <div class="section-divider animate-fade-in-up animate-delay-400"></div>
+         <p class="text-xl text-white/80 mt-6 text-glow animate-fade-in-up animate-delay-600">{t.contact.subtitle}</p>
+       </div>
       
       <div class="grid md:grid-cols-2 gap-16">
-        <div class="glass-card p-10">
-          <h3 class="text-3xl font-bold text-white mb-8 text-glow">{t.contacto.info.title}</h3>
+        <div class="glass-card p-10 animate-fade-in-left animate-delay-800">
+          <h3 class="text-3xl font-bold text-white mb-8 text-glow">{t.contact.info.title}</h3>
           <div class="space-y-4">
             <div class="flex items-center space-x-6">
               <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center glow">
@@ -368,7 +437,7 @@ const title = t.hero.title;
                 </svg>
               </div>
               <div>
-                <h4 class="font-bold text-white text-xl">{t.contacto.info.ubicacion}</h4>
+                <h4 class="font-bold text-white text-xl">{t.contact.info.location}</h4>
                 <p class="text-white/80">Colombia</p>
               </div>
             </div>
@@ -380,14 +449,14 @@ const title = t.hero.title;
                 </svg>
               </div>
               <div>
-                <h4 class="font-bold text-white text-xl">{t.contacto.info.disponibilidad}</h4>
-                <p class="text-white/80">{t.contacto.info.disponibilidadTexto}</p>
+                <h4 class="font-bold text-white text-xl">{t.contact.info.availability}</h4>
+                <p class="text-white/80">{t.contact.info.availabilityText}</p>
               </div>
             </div>
           </div>
           
           <div class="mt-10">
-            <h4 class="font-bold text-white text-xl mb-6 text-glow">{t.contacto.info.redesSociales}</h4>
+            <h4 class="font-bold text-white text-xl mb-6 text-glow">{t.contact.info.socialMedia}</h4>
             <div class="flex space-x-4">
               <a href="#" class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 glow">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -408,30 +477,30 @@ const title = t.hero.title;
           </div>
         </div>
         
-        <div class="glass-card p-10">
-          <h3 class="text-3xl font-bold text-white mb-8 text-glow">{t.contacto.form.title}</h3>
+        <div class="glass-card p-10 animate-fade-in-right animate-delay-1000">
+          <h3 class="text-3xl font-bold text-white mb-8 text-glow">{t.contact.form.title}</h3>
           <form class="space-y-6">
             <div>
               <label for="name" class="block text-sm font-medium text-white/90 mb-3">
-                {t.contacto.form.nombre}
+                {t.contact.form.name}
               </label>
               <input type="text" id="name" name="name" class="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-white/50 backdrop-blur-md" 
-                placeholder={t.contacto.form.nombrePlaceholder} required>
+                placeholder={t.contact.form.namePlaceholder} required>
             </div>
             <div>
               <label for="email" class="block text-sm font-medium text-white/90 mb-3">Email</label>
               <input type="email" id="email" name="email" class="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-white/50 backdrop-blur-md" 
-                placeholder={t.contacto.form.emailPlaceholder} required>
+                placeholder={t.contact.form.emailPlaceholder} required>
             </div>
             <div>
               <label for="message" class="block text-sm font-medium text-white/90 mb-3">
-                {t.contacto.form.mensaje}
+                {t.contact.form.message}
               </label>
               <textarea id="message" name="message" rows="4" class="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-white/50 backdrop-blur-md" 
-                placeholder={t.contacto.form.mensajePlaceholder} required></textarea>
+                placeholder={t.contact.form.messagePlaceholder} required></textarea>
             </div>
             <button type="submit" class="w-full btn-primary">
-              {t.contacto.form.enviar}
+              {t.contact.form.send}
             </button>
           </form>
         </div>
@@ -448,18 +517,18 @@ const title = t.hero.title;
     </div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <div class="mb-10">
-        <div class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-6 text-glow">AVT</div>
-        <p class="text-white/80 max-w-3xl mx-auto text-lg leading-relaxed">
-          {t.footer.descripcion}
-        </p>
-      </div>
+             <div class="mb-10">
+         <div class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-6 text-glow animate-fade-in-up animate-delay-200">AVT</div>
+         <p class="text-white/80 max-w-3xl mx-auto text-lg leading-relaxed animate-fade-in-up animate-delay-400">
+           {t.footer.description}
+         </p>
+       </div>
       
-      <div class="border-t border-white/20 pt-8">
-        <p class="text-white/60">
-          © 2024 Andrés Villanueva Tabares. {t.footer.derechos}
-        </p>
-      </div>
+             <div class="border-t border-white/20 pt-8">
+         <p class="text-white/60 animate-fade-in-up animate-delay-600">
+           © 2024 Andrés Villanueva Tabares. {t.footer.rights}
+         </p>
+       </div>
     </div>
   </footer>
 </Layout>

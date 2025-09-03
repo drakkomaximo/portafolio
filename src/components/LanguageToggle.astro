@@ -8,14 +8,14 @@
   aria-label="Cambiar idioma"
 >
   <!-- Bandera de Colombia como fondo -->
-  <svg id="colombiaFlag" class="absolute inset-0 w-full h-full" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <svg id="colombiaFlag" class="absolute inset-0 w-full h-full hidden" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <rect width="3" height="1" fill="#FDE047"/>
     <rect width="3" height="0.5" y="1" fill="#3B82F6"/>
     <rect width="3" height="0.5" y="1.5" fill="#EF4444"/>
   </svg>
   
   <!-- Bandera de Estados Unidos como fondo -->
-  <svg id="usaFlag" class="absolute inset-0 w-full h-full hidden" viewBox="0 0 190 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <svg id="usaFlag" class="absolute inset-0 w-full h-full" viewBox="0 0 190 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <rect width="190" height="100" fill="#B22234"/>
     <rect width="190" height="7.69" y="7.69" fill="white"/>
     <rect width="190" height="7.69" y="23.08" fill="white"/>
@@ -27,7 +27,7 @@
   </svg>
   
   <!-- Texto ES/EN en el centro -->
-  <span id="currentText" class="relative z-10 text-white font-bold text-sm drop-shadow-lg shadow-xl letter-border">ES</span>
+  <span id="currentText" class="relative z-10 text-white font-bold text-sm drop-shadow-lg shadow-xl letter-border">EN</span>
 </button>
 
 <style>
@@ -60,14 +60,16 @@
     const currentLang = getCurrentLanguage();
     
     if (currentLang === 'es') {
+      // Si estoy en español, muestro bandera de USA y texto EN (para cambiar a inglés)
+      colombiaFlag.classList.add('hidden');
+      usaFlag.classList.remove('hidden');
+      currentText.textContent = 'EN';
+      button.setAttribute('aria-label', 'Cambiar a inglés');
+    } else {
+      // Si estoy en inglés, muestro bandera de Colombia y texto ES (para cambiar a español)
       colombiaFlag.classList.remove('hidden');
       usaFlag.classList.add('hidden');
       currentText.textContent = 'ES';
-      button.setAttribute('aria-label', 'Cambiar a inglés');
-    } else {
-      colombiaFlag.classList.add('hidden');
-      usaFlag.classList.remove('hidden');
-             currentText.textContent = 'EN';
       button.setAttribute('aria-label', 'Change to Spanish');
     }
   }
