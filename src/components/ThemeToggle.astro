@@ -55,12 +55,20 @@
   
   // Function to update UI based on theme
   function updateThemeUI(theme: string) {
+    // Only update icons if they're not already in the correct state
+    const currentSunHidden = sunIcon?.classList.contains('hidden');
+    const currentMoonHidden = moonIcon?.classList.contains('hidden');
+    
     if (theme === 'light') {
-      sunIcon?.classList.add('hidden');
-      moonIcon?.classList.remove('hidden');
+      if (currentSunHidden !== true) {
+        sunIcon?.classList.add('hidden');
+        moonIcon?.classList.remove('hidden');
+      }
     } else {
-      sunIcon?.classList.remove('hidden');
-      moonIcon?.classList.add('hidden');
+      if (currentMoonHidden !== true) {
+        sunIcon?.classList.remove('hidden');
+        moonIcon?.classList.add('hidden');
+      }
     }
     
     // Update toggle button styles
@@ -72,9 +80,17 @@
     }
   }
   
-  // Initialize theme
+  // Initialize theme immediately to prevent flash
   const currentTheme = getCurrentTheme();
-  setTheme(currentTheme);
+  
+  // Apply theme immediately before DOM is fully loaded
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  
+  // Update UI immediately without triggering setTheme
+  updateThemeUI(currentTheme);
+  
+  // Then set up the full theme system (but don't update UI again)
+  localStorage.setItem('theme', currentTheme);
   
   // Theme toggle functionality
   themeToggle?.addEventListener('click', () => {

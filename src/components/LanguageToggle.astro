@@ -67,7 +67,7 @@
     } else {
       colombiaFlag.classList.add('hidden');
       usaFlag.classList.remove('hidden');
-             currentText.textContent = 'US';
+             currentText.textContent = 'EN';
       button.setAttribute('aria-label', 'Change to Spanish');
     }
   }
@@ -88,6 +88,10 @@
       // Si estamos en la raíz, ir al idioma opuesto
       newPath = `/${newLang}`;
     }
+    
+    // Guardar el tema actual en localStorage antes de navegar
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    localStorage.setItem('theme', currentTheme);
     
     // Navegar a la nueva URL
     window.location.href = newPath;
