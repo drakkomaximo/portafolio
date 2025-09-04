@@ -226,6 +226,26 @@
     background: var(--bg-tertiary);
   }
   
+  /* Alternating section backgrounds */
+  .section-bg-1 {
+    background: var(--bg-primary);
+  }
+  
+  .section-bg-2 {
+    background: var(--bg-secondary);
+  }
+  
+  .section-bg-3 {
+    background: var(--bg-tertiary);
+  }
+  
+  .section-bg-accent {
+    background: linear-gradient(135deg, 
+      color-mix(in srgb, var(--accent-primary) 5%, var(--bg-primary)),
+      color-mix(in srgb, var(--accent-secondary) 5%, var(--bg-secondary))
+    );
+  }
+  
   .theme-text {
     color: var(--text-primary);
   }

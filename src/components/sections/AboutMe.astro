@@ -2,91 +2,104 @@
 const { t, currentLang } = Astro.props;
 ---
 
-<section id="about" class="py-20 relative" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Modern Section Header -->
+<section id="about" class="py-24 relative section-bg-2">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Clean Section Header -->
     <div class="text-center mb-16">
-      <div class="inline-block px-6 py-3 theme-glass rounded-lg mb-6 animate-fade-in-up animate-delay-200">
-        <h2 class="text-3xl md:text-4xl font-bold theme-text">{t.aboutMe.title}</h2>
-      </div>
-      <div class="w-24 h-0.5 mx-auto mb-6 animate-fade-in-up animate-delay-400" style="background: linear-gradient(to right, transparent, var(--accent-primary), transparent);"></div>
-      <h3 class="text-xl md:text-2xl font-medium animate-fade-in-up animate-delay-600 theme-text-secondary">{t.aboutMe.whoAmI}</h3>
+      <h2 class="text-5xl md:text-6xl font-bold theme-text mb-6 animate-fade-in-up animate-delay-200">
+        {t.aboutMe.title}
+      </h2>
+      <div class="w-24 h-1 mx-auto animate-fade-in-up animate-delay-400" style="background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));"></div>
     </div>
     
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <!-- Left Column: Photo and CV -->
-      <div class="text-center lg:text-left animate-fade-in-up animate-delay-800">
-        <div class="relative mb-8 group">
-          <div class="absolute -inset-4 bg-gradient-to-r from-slate-600/20 to-slate-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+    <!-- Modern Content Layout -->
+    <div class="grid lg:grid-cols-3 gap-12 items-center">
+      <!-- Profile Image -->
+      <div class="lg:col-span-1 text-center animate-fade-in-up animate-delay-600">
+        <div class="w-72 h-72 rounded-2xl overflow-hidden shadow-2xl mx-auto">
           <img 
             src="/profile.jpg" 
             alt="Andrés Villanueva Tabares" 
-            class="relative w-64 h-64 rounded-full mx-auto lg:mx-0 object-cover border-4 border-white/20 shadow-2xl group-hover:scale-105 transition-transform duration-500"
+            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
           />
-          <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-slate-900 shadow-lg"></div>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="lg:col-span-2 space-y-8 animate-fade-in-up animate-delay-800">
+        <!-- Description -->
+        <div class="space-y-6">
+          <p class="text-xl theme-text-secondary leading-relaxed">
+            {t.aboutMe.description1}
+          </p>
+          <p class="text-xl theme-text-secondary leading-relaxed">
+            {t.aboutMe.description2}
+          </p>
         </div>
         
-        <div class="space-y-4">
+        <!-- Skills & CV -->
+        <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 rounded-full text-sm font-medium theme-glass theme-text">
+              {t.aboutMe.fullStack}
+            </span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium theme-glass theme-text">
+              {t.aboutMe.problemSolving}
+            </span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium theme-glass theme-text">
+              {t.aboutMe.cleanCode}
+            </span>
+          </div>
+          
           <a 
             href={currentLang === 'es' ? '/es_cv_andres_villanueva_tabares_2025.pdf' : '/en_cv_andres_villanueva_tabares_2025.pdf'}
             download
-            class="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm theme-text font-semibold rounded-xl border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            class="inline-flex items-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+            style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); color: white;"
           >
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
             </svg>
-            <span class="relative z-10">{t.aboutMe.downloadCV}</span>
+            {t.aboutMe.downloadCV}
           </a>
-          <p class="theme-text/60 text-sm mt-3 text-center lg:text-left">{t.aboutMe.downloadCVDesc}</p>
         </div>
       </div>
-      
-      <!-- Right Column: Description and Skills -->
-      <div class="space-y-8 animate-fade-in-up animate-delay-1000">
-        <div class="space-y-6">
-          <p class="theme-text/80 text-lg leading-relaxed">{t.aboutMe.description1}</p>
-          <p class="theme-text/80 text-lg leading-relaxed">{t.aboutMe.description2}</p>
+    </div>
+    
+    <!-- Expertise Section -->
+    <div class="mt-20 animate-fade-in-up animate-delay-1000">
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Web Development -->
+        <div class="text-center p-8 rounded-2xl theme-glass hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold theme-text mb-3">{t.aboutMe.webDevelopment}</h3>
+          <p class="theme-text-muted text-sm leading-relaxed">{t.aboutMe.webDevelopmentDesc}</p>
         </div>
         
-        <div class="flex flex-wrap gap-3">
-          <span class="px-4 py-2 theme-glass text-sm font-medium rounded-lg theme-text">{t.aboutMe.fullStack}</span>
-          <span class="px-4 py-2 theme-glass text-sm font-medium rounded-lg theme-text">{t.aboutMe.problemSolving}</span>
-          <span class="px-4 py-2 theme-glass text-sm font-medium rounded-lg theme-text">{t.aboutMe.cleanCode}</span>
+        <!-- Performance -->
+        <div class="text-center p-8 rounded-2xl theme-glass hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold theme-text mb-3">{t.aboutMe.performance}</h3>
+          <p class="theme-text-muted text-sm leading-relaxed">{t.aboutMe.performanceDesc}</p>
         </div>
         
-        <div class="grid md:grid-cols-3 gap-6">
-          <!-- Web Development -->
-          <div class="group text-center p-6 theme-glass rounded-xl theme-border hover:bg-white/8 transition-all duration-300 hover:scale-105">
-            <div class="w-16 h-16 theme-gradient rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg group-hover:shadow-slate-500/25 transition-all duration-300">
-              <svg class="w-8 h-8 theme-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-              </svg>
-            </div>
-            <h3 class="text-lg font-bold theme-text mb-2">{t.aboutMe.webDevelopment}</h3>
-            <p class="theme-text/70 text-sm leading-relaxed">{t.aboutMe.webDevelopmentDesc}</p>
+        <!-- Mobile First -->
+        <div class="text-center p-8 rounded-2xl theme-glass hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
           </div>
-          
-          <!-- Performance -->
-          <div class="group text-center p-6 theme-glass rounded-xl theme-border hover:bg-white/8 transition-all duration-300 hover:scale-105">
-            <div class="w-16 h-16 theme-gradient rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg group-hover:shadow-slate-500/25 transition-all duration-300">
-              <svg class="w-8 h-8 theme-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <h3 class="text-lg font-bold theme-text mb-2">{t.aboutMe.performance}</h3>
-            <p class="theme-text/70 text-sm leading-relaxed">{t.aboutMe.performanceDesc}</p>
-          </div>
-          
-          <!-- Mobile First -->
-          <div class="group text-center p-6 theme-glass rounded-xl theme-border hover:bg-white/8 transition-all duration-300 hover:scale-105">
-            <div class="w-16 h-16 theme-gradient rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg group-hover:shadow-slate-500/25 transition-all duration-300">
-              <svg class="w-8 h-8 theme-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-              </svg>
-            </div>
-            <h3 class="text-lg font-bold theme-text mb-2">{t.aboutMe.mobileFirst}</h3>
-            <p class="theme-text/70 text-sm leading-relaxed">{t.aboutMe.mobileFirstDesc}</p>
-          </div>
+          <h3 class="text-xl font-bold theme-text mb-3">{t.aboutMe.mobileFirst}</h3>
+          <p class="theme-text-muted text-sm leading-relaxed">{t.aboutMe.mobileFirstDesc}</p>
         </div>
       </div>
     </div>
