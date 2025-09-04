@@ -1,4 +1,6 @@
 ---
+import ScrollToTop from '../components/ScrollToTop.astro';
+
 export interface Props {
   title: string;
   description?: string;
@@ -36,6 +38,7 @@ const currentLanguage = Astro.currentLocale;
   </head>
   <body class="font-['Inter'] antialiased" style="background: var(--bg-primary); color: var(--text-primary);">
     <slot />
+    <ScrollToTop />
   </body>
 </html>
 
@@ -56,15 +59,15 @@ const currentLanguage = Astro.currentLocale;
   }
   
   ::-webkit-scrollbar-track {
-    background: #f1f5f9;
+    background: var(--bg-secondary);
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
+    background: var(--border-primary);
     border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+    background: var(--accent-primary);
   }
 </style>

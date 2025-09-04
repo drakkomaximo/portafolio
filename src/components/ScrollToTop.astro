@@ -1,0 +1,84 @@
+---
+// Componente para botón flotante de volver al inicio
+---
+
+<!-- Botón flotante para volver al inicio -->
+<button 
+  id="scrollToTop" 
+  class="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full transition-all duration-300 transform hover:scale-110 opacity-0 pointer-events-none shadow-2xl cursor-pointer"
+  style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));"
+  aria-label="Volver al inicio"
+>
+  <svg class="w-5 h-5 text-white mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+  </svg>
+</button>
+
+<script>
+  // Función para mostrar/ocultar el botón según el scroll
+  function toggleScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    if (!scrollToTopBtn) return;
+    
+    const scrollY = window.scrollY;
+    
+    if (scrollY > 300) {
+      scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+      scrollToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+    } else {
+      scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+      scrollToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+    }
+  }
+  
+  // Función para hacer scroll suave al inicio
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+  
+  // Event listeners
+  window.addEventListener('scroll', toggleScrollToTop);
+  
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+  }
+  
+  // Inicializar el estado del botón
+  toggleScrollToTop();
+</script>
+
+<style>
+  #scrollToTop {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+  }
+  
+  #scrollToTop:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1) translateY(-2px);
+  }
+  
+  /* Animación de pulso sutil cuando aparece */
+  #scrollToTop.opacity-100 {
+    animation: gentlePulse 3s infinite;
+  }
+  
+  @keyframes gentlePulse {
+    0%, 100% {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  /* Efecto de brillo suave en hover */
+  #scrollToTop:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+</style>

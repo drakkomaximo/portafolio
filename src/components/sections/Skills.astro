@@ -1,0 +1,83 @@
+---
+const { t } = Astro.props;
+---
+
+<section id="skills" class="py-20 relative style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));"">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Modern Section Header -->
+    <div class="text-center mb-16">
+      <div class="inline-block px-6 py-3 theme-glass rounded-lg theme-border mb-6 animate-fade-in-up animate-delay-200">
+        <h2 class="text-3xl md:text-4xl font-bold theme-text">{t.skills.title}</h2>
+      </div>
+      <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-slate-400 to-transparent mx-auto mb-6 animate-fade-in-up animate-delay-400"></div>
+      <p class="text-xl theme-text/80 font-light animate-fade-in-up animate-delay-600">{t.skills.subtitle}</p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Frontend -->
+      <div class="group text-center theme-glass rounded-xl theme-border p-8 hover:bg-white/8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-slate-500/25 animate-fade-in-up animate-delay-800">
+        <div class="w-20 h-20 theme-gradient rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-slate-500/25 transition-all duration-300">
+          <svg class="w-10 h-10 theme-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold theme-text mb-4">{t.skills.frontend.title}</h3>
+        <div class="space-y-2">
+          <div class="theme-text/70 text-sm font-medium">React / Vue.js</div>
+          <div class="theme-text/70 text-sm font-medium">TypeScript</div>
+          <div class="theme-text/70 text-sm font-medium">Tailwind CSS</div>
+          <div class="theme-text/70 text-sm font-medium">HTML5 / CSS3</div>
+        </div>
+      </div>
+      
+      <!-- Backend -->
+      <div class="group text-center theme-glass rounded-xl theme-border p-8 hover:bg-white/8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-slate-500/25 animate-fade-in-up animate-delay-1000">
+        <div class="w-20 h-20 theme-gradient rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-slate-500/25 transition-all duration-300">
+          <svg class="w-10 h-10 theme-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold theme-text mb-4">{t.skills.backend.title}</h3>
+        <div class="space-y-2">
+          <div class="theme-text/70 text-sm font-medium">Node.js</div>
+          <div class="theme-text/70 text-sm font-medium">Express.js</div>
+          <div class="theme-text/70 text-sm font-medium">Python</div>
+          <div class="theme-text/70 text-sm font-medium">{t.skills.backend.apis}</div>
+        </div>
+      </div>
+      
+      <!-- Database -->
+      <div class="group text-center theme-glass rounded-xl theme-border p-8 hover:bg-white/8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-slate-500/25 animate-fade-in-up animate-delay-1200">
+        <div class="w-20 h-20 theme-gradient rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-slate-500/25 transition-all duration-300">
+          <svg class="w-10 h-10 theme-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold theme-text mb-4">{t.skills.database.title}</h3>
+        <div class="space-y-2">
+          <div class="theme-text/70 text-sm font-medium">MongoDB</div>
+          <div class="theme-text/70 text-sm font-medium">PostgreSQL</div>
+          <div class="theme-text/70 text-sm font-medium">MySQL</div>
+          <div class="theme-text/70 text-sm font-medium">Redis</div>
+        </div>
+      </div>
+      
+      <!-- DevOps -->
+      <div class="group text-center theme-glass rounded-xl theme-border p-8 hover:bg-white/8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-slate-500/25 animate-fade-in-up animate-delay-1400">
+        <div class="w-20 h-20 theme-gradient rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-slate-500/25 transition-all duration-300">
+          <svg class="w-10 h-10 theme-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold theme-text mb-4">{t.skills.devops.title}</h3>
+        <div class="space-y-2">
+          <div class="theme-text/70 text-sm font-medium">Docker</div>
+          <div class="theme-text/70 text-sm font-medium">AWS</div>
+          <div class="theme-text/70 text-sm font-medium">CI/CD</div>
+          <div class="theme-text/70 text-sm font-medium">Linux</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
