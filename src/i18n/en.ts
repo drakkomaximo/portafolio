@@ -79,7 +79,7 @@ export const en = {
   // Contact Section
   contact: {
     title: 'Shall We Work Together?',
-    subtitle: 'I\'m always open to new opportunities and interesting projects',
+    subtitle: 'Let\'s have a virtual coffee and get to know each other. I\'m always open to new opportunities and interesting projects!',
     info: {
       title: 'Contact Information',
       location: 'Location',
@@ -93,7 +93,7 @@ export const en = {
       namePlaceholder: 'Your name',
       emailPlaceholder: 'your@email.com',
       message: 'Message',
-      messagePlaceholder: 'Your message...',
+      messagePlaceholder: 'Tell me about your project...',
       send: 'Send Message'
     }
   },
