@@ -421,3 +421,93 @@
 .animate-delay-1600 {
   animation-delay: 1.6s;
 }
+
+/* Experience Carousel Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Carousel hover effects */
+.company-logo {
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.company-logo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Smooth transitions for info panel */
+.info-panel {
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.info-panel.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Swiper custom styles */
+.experience-swiper {
+  padding: 0 20px;
+}
+
+.swiper-pagination-custom .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #6b7280;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-custom .swiper-pagination-bullet-active {
+  background: #60a5fa;
+  transform: scale(1.25);
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.swiper-button-prev-custom.swiper-button-disabled,
+.swiper-button-next-custom.swiper-button-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

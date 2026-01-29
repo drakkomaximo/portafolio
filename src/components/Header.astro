@@ -5,7 +5,7 @@ import LanguageToggle from './LanguageToggle.astro';
 const { t } = Astro.props;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b" style="background: var(--glass-bg); border-color: var(--glass-border);">
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b" style="background: var(--glass-bg); border-color: var(--glass-border); backdrop-filter: blur(12px);">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-24">
       <!-- Logo with elegant design -->
@@ -22,6 +22,11 @@ const { t } = Astro.props;
       <nav class="hidden md:flex items-center space-x-1">
         <a href="#about" class="relative px-6 py-3 font-medium text-lg transition-all duration-300 group" style="color: var(--text-muted);">
           {t.aboutMe.title}
+          <div class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: var(--glass-bg);"></div>
+          <div class="absolute bottom-0 left-1/2 w-0 h-0.5 group-hover:w-1/2 transition-all duration-300" style="background: var(--accent-primary);"></div>
+        </a>
+        <a href="#experience" class="relative px-6 py-3 font-medium text-lg transition-all duration-300 group" style="color: var(--text-muted);">
+          {t.experience.title}
           <div class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: var(--glass-bg);"></div>
           <div class="absolute bottom-0 left-1/2 w-0 h-0.5 group-hover:w-1/2 transition-all duration-300" style="background: var(--accent-primary);"></div>
         </a>

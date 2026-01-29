@@ -76,6 +76,17 @@ export const es = {
     }
   },
 
+  // Experience Section
+  experience: {
+    title: 'Mi Experiencia Profesional',
+    subtitle: 'Un recorrido por mi trayectoria profesional',
+    role: 'Rol',
+    achievements: 'Logros Principales',
+    technologies: 'Tecnologías',
+    duration: 'Duración',
+    downloadCV: 'Descarga mi CV completo para más detalles'
+  },
+
   // Contact Section
   contact: {
     title: '¿Trabajamos Juntos?',

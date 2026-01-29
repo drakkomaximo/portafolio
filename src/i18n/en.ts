@@ -76,6 +76,17 @@ export const en = {
     }
   },
 
+  // Experience Section
+  experience: {
+    title: 'My Professional Experience',
+    subtitle: 'A journey through my professional career',
+    role: 'Role',
+    achievements: 'Key Achievements',
+    technologies: 'Technologies',
+    duration: 'Duration',
+    downloadCV: 'Download my complete CV for more details'
+  },
+
   // Contact Section
   contact: {
     title: 'Shall We Work Together?',
