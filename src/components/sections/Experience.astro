@@ -1,11 +1,22 @@
 ---
-import ExperienceCarousel from '../ExperienceCarousel.tsx';
+import ExperienceCarousel from "../ExperienceCarousel.tsx";
+import { experienceInMemoryRepository } from "../../infrastructure/experienceInMemoryRepository";
 
 const { t, currentLang } = Astro.props;
+const companies = await experienceInMemoryRepository.getCompanies(currentLang);
 ---
 
-<section id="experience" class="py-20 relative" style="background: var(--bg-secondary);">
+<section
+  id="experience"
+  class="py-20 relative"
+  style="background: var(--bg-secondary);"
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <ExperienceCarousel client:load t={t} currentLang={currentLang} />
+    <ExperienceCarousel
+      client:load
+      t={t}
+      currentLang={currentLang}
+      companies={companies}
+    />
   </div>
 </section>

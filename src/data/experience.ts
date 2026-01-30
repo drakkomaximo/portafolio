@@ -1,247 +1,244 @@
+import type { LocalizedString, LocalizedStringArray } from '../domain/localization';
+
 export interface Company {
   id: string;
   name: string;
   logo: string;
   website: string;
   period: string;
-  role: {
-    es: string;
-    en: string;
-  };
-  achievements: {
-    es: string[];
-    en: string[];
-  };
-  description: {
-    es: string;
-    en: string;
-  };
+  role: LocalizedString;
+  achievements: LocalizedStringArray;
+  description: LocalizedString;
   technologies?: string[];
 }
 
 export const companies: Company[] = [
   {
-    id: 'purrfect',
-    name: 'Purrfect Hire',
-    logo: 'https://github.com/user-attachments/assets/47cee5f8-38c2-4a40-83f6-cff115040814',
-    website: 'https://purrfecthire.com/',
-    period: '2025 - Presente',
-    role: {
-      es: 'Senior Developer',
-      en: 'Senior Developer'
-    },
-    achievements: {
-      es: [
-        'Desarrollo de plataforma de reclutamiento con React y Node.js',
-        'Implementación de IA en procesos de selección usando Python y TensorFlow',
-        'Arquitectura de microservicios escalable'
-      ],
-      en: [
-        'Development of recruitment platform with React and Node.js',
-        'AI implementation in selection processes using Python and TensorFlow',
-        'Scalable microservices architecture'
-      ]
-    },
-    description: {
-      es: 'Plataforma de reclutamiento con tecnología de vanguardia',
-      en: 'Cutting-edge recruitment platform'
-    },
-    technologies: ['React', 'Node.js', 'Python', 'PostgreSQL', 'TensorFlow', 'AWS']
-  },
-  {
     id: 'simphony',
-    name: 'Simphony',
+    name: 'SIMPHONY S.A.S',
     logo: 'https://github.com/user-attachments/assets/2d943268-9872-4f9a-b894-cefa758ec305',
     website: 'https://simphony.com.co/',
-    period: '2025 - Presente',
+    period: 'Enero 2024 – Abril 2025',
     role: {
-      es: 'Tech Consultant',
-      en: 'Tech Consultant'
+      es: 'Senior Frontend Developer',
+      en: 'Senior Frontend Developer',
     },
     achievements: {
       es: [
-        'Consultoría en transformación digital para empresas Fortune 500',
-        'Implementación de soluciones cloud con AWS y Azure',
-        'Mentoría en tecnologías emergentes a equipos de 15+ desarrolladores'
+        'Optimización de rendimiento y accesibilidad, reduciendo tiempos de carga.',
+        'Diseño e implementación de soluciones web y móviles alineadas a requerimientos de negocio, presupuesto y cronogramas.',
+        'Desarrollo de aplicaciones escalables y responsivas con frameworks modernos.',
+        'Colaboración con equipos backend y UX/UI para asegurar coherencia arquitectónica.',
+        'Liderazgo de entregables técnicos en entornos ágiles (SCRUM).',
+        'Promoción de buenas prácticas y arquitectura modular reutilizable.',
       ],
       en: [
-        'Digital transformation consulting for Fortune 500 companies',
-        'Cloud solutions implementation with AWS and Azure',
-        'Mentoring in emerging technologies for teams of 15+ developers'
-      ]
+        'Optimized performance and accessibility, reducing load times.',
+        'Designed and implemented web and mobile solutions aligned with business requirements, budget, and timelines.',
+        'Developed scalable and responsive applications using modern frameworks.',
+        'Collaborated with backend and UX/UI teams to ensure architectural consistency.',
+        'Led technical deliverables in agile environments (SCRUM).',
+        'Promoted best practices and reusable modular architecture.',
+      ],
     },
     description: {
-      es: 'Empresa de consultoría en tecnología y transformación digital',
-      en: 'Technology and digital transformation consulting company'
+      es: 'Senior Frontend Developer encargado del diseño e implementación de soluciones web y móviles para SIMPHONY S.A.S.',
+      en: 'Senior Frontend Developer in charge of designing and implementing web and mobile solutions for SIMPHONY S.A.S.',
     },
-    technologies: ['AWS', 'Azure', 'Python', 'Kubernetes', 'Terraform', 'MongoDB']
+    technologies: ['React', 'Next.js', 'Astro.js', 'Vue.js', 'React Native', 'JavaScript', 'HTML5', 'CSS3'],
   },
   {
     id: 'publicis',
-    name: 'Publicis Groupe',
+    name: 'Publicis Global Delivery (PGD)',
     logo: 'https://github.com/drakkomaximo/drakkomaximo/assets/57687342/048f3128-5745-40a3-bc5f-eb692f75dac3',
     website: 'https://www.publicisgroupe.com/en/the-groupe/about-publicis-groupe',
-    period: '2024 - 2025',
+    period: 'Septiembre 2023 – Marzo 2025',
     role: {
-      es: 'Lead Developer',
-      en: 'Lead Developer'
+      es: 'Experience Technology Engineer',
+      en: 'Experience Technology Engineer',
     },
     achievements: {
       es: [
-        'Liderazgo de proyectos internacionales para clientes Fortune 100',
-        'Desarrollo de soluciones innovadoras de marketing digital',
-        'Colaboración con equipos globales distribuidos en 5 continentes'
+        'Mejora en estabilidad y tiempos de respuesta en producción.',
+        'Optimización de la experiencia de usuario en plataformas de alto tráfico.',
+        'Desarrollo y despliegue de aplicaciones web orientadas a datos.',
+        'Implementación de aplicaciones móviles multiplataforma con React Native.',
+        'Desarrollo de herramientas internas con Next.js.',
+        'Trabajo colaborativo bajo metodologías ágiles.',
       ],
       en: [
-        'Leadership of international projects for Fortune 100 clients',
-        'Development of innovative digital marketing solutions',
-        'Collaboration with global teams distributed across 5 continents'
-      ]
+        'Improved stability and response times in production.',
+        'Optimized UX for high-traffic platforms.',
+        'Developed and deployed data-driven web applications.',
+        'Implemented cross-platform mobile applications with React Native.',
+        'Built internal tools using Next.js.',
+        'Collaborated in agile teams (Scrum).',
+      ],
     },
     description: {
-      es: 'Grupo global de comunicaciones y marketing con presencia en 100+ países',
-      en: 'Global communications and marketing group with presence in 100+ countries'
+      es: 'Experience Technology Engineer enfocado en aplicaciones web y móviles orientadas a datos para Publicis Global Delivery.',
+      en: 'Experience Technology Engineer focused on data-driven web and mobile applications for Publicis Global Delivery.',
     },
-    technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Redis', 'Docker']
+    technologies: ['React', 'React Native', 'JavaScript', 'TypeScript', 'HTML5', 'SASS', 'Salesforce', 'Veeva Vault', 'Next.js'],
   },
   {
     id: 'donrep',
-    name: 'Don Rep',
+    name: 'Donrep S.A.S',
     logo: 'https://user-images.githubusercontent.com/57687342/227538339-4ce66d6c-8350-48bb-9df5-9e38bf91c4c5.jpg',
     website: 'https://www.donrep.co/',
-    period: '2024 - 2024',
+    period: 'Agosto 2022 – Marzo 2023',
     role: {
-      es: 'Consultor Técnico',
-      en: 'Technical Consultant'
+      es: 'Senior Frontend Developer',
+      en: 'Senior Frontend Developer',
     },
     achievements: {
       es: [
-        'Consultoría en arquitectura de software para startups tecnológicas',
-        'Implementación de mejores prácticas de desarrollo y DevOps',
-        'Capacitación a equipos técnicos en metodologías ágiles'
+        'Incremento del 50% en eficiencia del proceso de facturación electrónica.',
+        'Mejora del rendimiento y usabilidad multiplataforma.',
+        'Diseño de un sistema contable con procesos automatizados.',
+        'Liderazgo de la renovación de la herramienta interna Jimmy v3.',
+        'Refactorización de código aplicando estándares de accesibilidad.',
       ],
       en: [
-        'Software architecture consulting for tech startups',
-        'Development and DevOps best practices implementation',
-        'Technical team training in agile methodologies'
-      ]
+        'Increased electronic invoicing efficiency by 50%.',
+        'Improved performance and usability across platforms.',
+        'Designed an accounting system with automated processes.',
+        'Led the redesign of the internal tool Jimmy v3.',
+        'Refactored code applying accessibility standards.',
+      ],
     },
     description: {
-      es: 'Empresa de consultoría tecnológica especializada en startups',
-      en: 'Technology consulting company specialized in startups'
+      es: 'Senior Frontend Developer liderando la renovación de herramientas internas y sistemas contables en Donrep S.A.S.',
+      en: 'Senior Frontend Developer leading the renewal of internal tools and accounting systems at Donrep S.A.S.',
     },
-    technologies: ['Node.js', 'React', 'AWS', 'Docker', 'PostgreSQL', 'Git']
+    technologies: ['JavaScript', 'TypeScript', 'React.js', 'React Native', 'HTML5', 'CSS3', 'Git', 'WCAG'],
   },
   {
     id: 'itglobers',
-    name: 'IT Globers',
+    name: 'ITGlobers',
     logo: 'https://media.licdn.com/dms/image/C4E0BAQE57T41T0ZR8A/company-logo_200_200/0/1587092424852?e=2147483647&v=beta&t=KeWpAEzM4ESlfH0As5SRjMrj04gWb18SRZFEJoCMN7Y',
     website: 'https://itglobers.com/',
-    period: '2023 - 2024',
+    period: 'Agosto 2021 – Agosto 2022',
     role: {
-      es: 'Senior Full Stack Developer',
-      en: 'Senior Full Stack Developer'
+      es: 'Senior Frontend Developer',
+      en: 'Senior Frontend Developer',
     },
     achievements: {
       es: [
-        'Desarrollo de aplicaciones enterprise con arquitectura modular',
-        'Integración de sistemas complejos usando APIs REST y GraphQL',
-        'Optimización de rendimiento mejorando velocidad en 40%'
+        'Optimización de flujos y carga de datos.',
+        'Mejora de consistencia visual y diseño responsivo.',
+        'Mejora de UI/UX en plataformas web.',
+        'Desarrollo de módulos internos escalables.',
+        'Aseguramiento de estándares de código limpio.',
       ],
       en: [
-        'Enterprise application development with modular architecture',
-        'Complex systems integration using REST and GraphQL APIs',
-        'Performance optimization improving speed by 40%'
-      ]
+        'Optimized data flows and loading.',
+        'Improved visual consistency and responsive design.',
+        'Improved UI/UX across web platforms.',
+        'Developed scalable internal modules.',
+        'Ensured clean code standards.',
+      ],
     },
     description: {
-      es: 'Empresa global de desarrollo de software',
-      en: 'Global software development company'
+      es: 'Senior Frontend Developer centrado en mejoras de UI/UX y módulos internos escalables en ITGlobers.',
+      en: 'Senior Frontend Developer focused on UI/UX improvements and scalable internal modules at ITGlobers.',
     },
-    technologies: ['Vue.js', 'Laravel', 'MySQL', 'Docker', 'GraphQL', 'Azure']
+    technologies: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Git', 'REST APIs'],
   },
   {
     id: 'rebus',
     name: 'Rebus Technology',
     logo: 'https://user-images.githubusercontent.com/57687342/227536088-d390782d-a612-4a0-86ba-1ff4efad9614.png',
     website: 'https://www.linkedin.com/company/rebus-technology/',
-    period: '2022 - 2023',
+    period: 'Abril 2021 – Agosto 2021',
     role: {
-      es: 'Tech Lead',
-      en: 'Tech Lead'
+      es: 'Senior Frontend Developer',
+      en: 'Senior Frontend Developer',
     },
     achievements: {
       es: [
-        'Arquitectura de sistemas escalables para procesar 1M+ transacciones/día',
-        'Implementación de microservicios con Spring Boot y Docker',
-        'Liderazgo de equipos de desarrollo de 8+ ingenieros'
+        'Reducción de errores en producción mediante tipado estático.',
+        'Mejora del rendimiento de la interfaz.',
+        'Desarrollo de la PWA Greenrun.',
+        'Implementación de flujos mobile-first.',
+        'Integración de APIs RESTful.',
       ],
       en: [
-        'Scalable systems architecture processing 1M+ transactions/day',
-        'Microservices implementation with Spring Boot and Docker',
-        'Development team leadership of 8+ engineers'
-      ]
+        'Reduced production bugs through static typing.',
+        'Improved interface performance.',
+        'Developed the Greenrun PWA.',
+        'Implemented mobile-first flows.',
+        'Integrated RESTful APIs.',
+      ],
     },
     description: {
-      es: 'Empresa de tecnología enfocada en soluciones innovadoras para fintech',
-      en: 'Technology company focused on innovative fintech solutions'
+      es: 'Senior Frontend Developer responsable del desarrollo de la PWA Greenrun y flujos mobile-first en Rebus Technology.',
+      en: 'Senior Frontend Developer responsible for developing the Greenrun PWA and mobile-first flows at Rebus Technology.',
     },
-    technologies: ['Java', 'Spring Boot', 'Docker', 'PostgreSQL', 'Redis', 'ELK Stack']
+    technologies: ['TypeScript', 'JavaScript', 'REST APIs', 'PWA', 'Mobile-First', 'Git'],
   },
   {
     id: 'sense',
-    name: 'Sense Digital',
+    name: 'Sense Holding S.A.S',
     logo: 'https://github.com/user-attachments/assets/a37f932e-50b7-4a64-a078-cd01fff57a3e',
     website: 'https://sense-digital.co/',
-    period: '2021 - 2022',
+    period: 'Octubre 2019 – Abril 2021',
     role: {
-      es: 'Desarrollador Frontend Senior',
-      en: 'Senior Frontend Developer'
+      es: 'Frontend Developer',
+      en: 'Frontend Developer',
     },
     achievements: {
       es: [
-        'Liderazgo técnico en proyectos de gran escala para clientes corporativos',
-        'Implementación de arquitecturas modernas con React y TypeScript',
-        'Mentoría a desarrolladores junior y mid-level'
+        'Incremento del 30% en ventas online.',
+        'Mejora en usabilidad y consistencia visual.',
+        'Desarrollo de plataforma e-commerce escalable.',
+        'Implementación de funcionalidades alineadas a marketing y UX.',
+        'Creación de guías de estilo y componentes reutilizables.',
       ],
       en: [
-        'Technical leadership in large-scale projects for corporate clients',
-        'Modern architecture implementation with React and TypeScript',
-        'Mentoring of junior and mid-level developers'
-      ]
+        'Increased online sales by 30%.',
+        'Improved usability and visual consistency.',
+        'Developed a scalable e-commerce platform.',
+        'Implemented features aligned with marketing and UX.',
+        'Created style guides and reusable components.',
+      ],
     },
     description: {
-      es: 'Agencia digital especializada en transformación digital y UX/UI',
-      en: 'Digital agency specialized in digital transformation and UX/UI'
+      es: 'Frontend Developer encargado del desarrollo de una plataforma e-commerce escalable para Sense Holding S.A.S.',
+      en: 'Frontend Developer in charge of developing a scalable e-commerce platform for Sense Holding S.A.S.',
     },
-    technologies: ['React', 'TypeScript', 'Next.js', 'Styled Components', 'Jest', 'Cypress']
+    technologies: ['JavaScript', 'HTML5', 'CSS3', 'Git', 'UX/UI'],
   },
   {
     id: 'bit',
-    name: 'BIT Institute',
+    name: 'Bogotá Institute of Technology (BIT)',
     logo: 'https://user-images.githubusercontent.com/57687342/227535618-7049fda7-9f72-4b24-bef3-6c7b6a830bd3.png',
     website: 'https://bit.institute/',
-    period: '2020 - 2021',
+    period: 'Septiembre 2019 – Diciembre 2019',
     role: {
-      es: 'Desarrollador Full Stack',
-      en: 'Full Stack Developer'
+      es: 'Fullstack Angular Instructor',
+      en: 'Fullstack Angular Instructor',
     },
     achievements: {
       es: [
-        'Desarrollo de aplicaciones web con React y Node.js para plataforma educativa',
-        'Implementación de APIs RESTful para gestión de cursos y estudiantes',
-        'Trabajo en equipo con metodologías ágiles (Scrum)'
+        'Aumento en la tasa de finalización de proyectos.',
+        'Formación de más de 150 mujeres en desarrollo web Full Stack.',
+        'Diseño de proyectos educativos con stack MEAN.',
+        'Implementación de metodologías ágiles en entornos académicos.',
+        'Enfoque práctico basado en casos reales.',
       ],
       en: [
-        'Web application development with React and Node.js for educational platform',
-        'RESTful API implementation for course and student management',
-        'Teamwork with agile methodologies (Scrum)'
-      ]
+        'Increased project completion rates.',
+        'Trained more than 150 women in Full Stack web development.',
+        'Designed educational projects using the MEAN stack.',
+        'Implemented agile methodologies in academic environments.',
+        'Applied a practical, real-case-based approach.',
+      ],
     },
     description: {
-      es: 'Instituto de tecnología especializado en formación de desarrolladores',
-      en: 'Technology institute specialized in developer training'
+      es: 'Instructor Fullstack Angular en el Bogotá Institute of Technology, enfocado en formación práctica y proyectos reales.',
+      en: 'Fullstack Angular Instructor at Bogotá Institute of Technology, focused on practical training and real-world projects.',
     },
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'WebRTC', 'Stripe']
-  }
+    technologies: ['Angular', 'Node.js', 'Express', 'MongoDB', 'Git'],
+  },
 ];

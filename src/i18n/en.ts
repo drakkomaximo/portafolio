@@ -10,6 +10,11 @@ export const en = {
 
   // Quick Stats Section
   quickStats: {
+    hero: {
+      yearValue: '6+',
+      projectValue: '50+',
+      satisfactionValue: '100%'
+    },
     yearsExp: 'Years Exp.',
     projects: 'Projects',
     satisfaction: 'Satisfaction'
@@ -19,7 +24,7 @@ export const en = {
   aboutMe: {
     title: 'About Me',
     whoAmI: 'Who Am I?',
-    description1: 'I am a Full Stack Developer with over 5 years of experience creating modern and scalable web applications. I am passionate about solving complex problems and turning ideas into digital reality.',
+    description1: 'I am a Full Stack Developer with over 6 years of experience creating modern and scalable web applications. I am passionate about solving complex problems and turning ideas into digital reality.',
     description2: 'My focus is on writing clean, maintainable code and creating intuitive user experiences that make a difference.',
     fullStack: 'Full Stack Development',
     problemSolving: 'Problem Solving',
@@ -32,29 +37,6 @@ export const en = {
     mobileFirstDesc: 'Mobile-centered design',
     downloadCV: 'Download CV',
     downloadCVDesc: 'Download my resume in PDF'
-  },
-
-  // Projects Section
-  projects: {
-    title: 'My Projects',
-    subtitle: 'Some of the projects I\'ve worked on',
-    viewDemo: 'View Demo',
-    code: 'Code',
-    project1: {
-      title: 'E-commerce Platform',
-      subtitle: 'Complete e-commerce platform',
-      description: 'Complete e-commerce platform with shopping cart, payments and inventory management.'
-    },
-    project2: {
-      title: 'Task Management App',
-      subtitle: 'Task management with drag & drop',
-      description: 'Task management application with drag & drop, notifications and real-time collaboration.'
-    },
-    project3: {
-      title: 'Portfolio Website',
-      subtitle: 'Modern design and SEO optimized',
-      description: 'Personal website with modern design, smooth animations and SEO optimized.'
-    }
   },
 
   // Skills Section
